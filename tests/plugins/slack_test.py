@@ -1,0 +1,41 @@
+import pytest
+
+from detect_secrets.plugins.slack import SlackDetector
+
+
+class TestSlackDetector:
+
+    @pytest.mark.parametrize(
+        'line',
+        [
+            (
+                'xoxp-523423-234243-234233-e039d02840a0b9379c'
+            ),
+            (
+                'xoxo-523423-234243-234233-e039d02840a0b9379c'
+            ),
+            (
+                'xoxs-523423-234243-234233-e039d02840a0b9379c'
+            ),
+            (
+
+            ),
+            (
+
+            ),
+            (
+                'xoxr-523423-234243-234233-e039d02840a0b9379c'
+            ),
+            (
+
+            ),
+            (
+
+            ),
+        ],
+    )
+    def test_analyze(self, line):
+        logic = SlackDetector()
+
+        output = logic.analyze_line(filename='mock_filename', line=line)
+        assert len(output) == 1
