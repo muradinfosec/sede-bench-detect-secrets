@@ -39,4 +39,4 @@ typing-extensions==4.12.2
 unidiff==0.7.5
 urllib3==2.2.2
 virtualenv==20.26.6
-zipp==3.19.2
+zipp==4.1.1
